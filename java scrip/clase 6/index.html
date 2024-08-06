@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacén de Comida</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0e0e0; /* Fondo de color gris claro */
+            color: #333;
+        }
+        header {
+            background-color: #002147; /* Azul oscuro */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white !important;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: #fff; /* Fondo blanco para los contenedores */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            margin: 20px 0;
+        }
+        .btn-primary {
+            background-color: #ff6600; /* Naranja */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #cc5200; /* Naranja más oscuro */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .table thead {
+            background-color: #002147; /* Azul oscuro */
+            color: white;
+        }
+        .table tbody tr:hover {
+            background-color: #f4f4f4; /* Gris claro */
+        }
+        h2 {
+            color: #ff6600; /* Naranja */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ff6600 !important; /* Naranja */
+        }
+        .quantity-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-buttons button {
+            background-color: #ff6600; /* Naranja */
+            border: none;
+            color: white;
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .quantity-buttons button:hover {
+            background-color: #cc5200; /* Naranja más oscuro */
+        }
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Almacén de Comida</h1>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#carta">Carta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="productos">
+        <h2 class="text-center">Nuestros Productos</h2>
+        <div class="row product">
+            <div class="col-md-8">Pan</div>
+            <div class="col-md-4">
+                <div class="quantity-buttons">
+                    <button onclick="decreaseQuantity('quantity-pan')">-</button>
+                    <input type="text" class="form-control quantity-input" value="0" id="quantity-pan" readonly>
+                    <button onclick="increaseQuantity('quantity-pan')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-8">Galletas</div>
+            <div class="col-md-4">
+                <div class="quantity-buttons">
+                    <button onclick="decreaseQuantity('quantity-galletas')">-</button>
+                    <input type="text" class="form-control quantity-input" value="0" id="quantity-galletas" readonly>
+                    <button onclick="increaseQuantity('quantity-galletas')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-8">Semillas</div>
+            <div class="col-md-4">
+                <div class="quantity-buttons">
+                    <button onclick="decreaseQuantity('quantity-semillas')">-</button>
+                    <input type="text" class="form-control quantity-input" value="0" id="quantity-semillas" readonly>
+                    <button onclick="increaseQuantity('quantity-semillas')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-8">Quesos</div>
+            <div class="col-md-4">
+                <div class="quantity-buttons">
+                    <button onclick="decreaseQuantity('quantity-quesos')">-</button>
+                    <input type="text" class="form-control quantity-input" value="0" id="quantity-quesos" readonly>
+                    <button onclick="increaseQuantity('quantity-quesos')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="contacto">
+        <h2 class="text-center">Contacto</h2>
+        <p>Teléfono: 2622666662</p>
+        <p>Email: <a href="mailto:giuliano@gmail.com">giuliano@gmail.com</a></p>
+    </div>
+    <div class="container" id="carta">
+        <h2 class="text-center">Carta de Selección de Productos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pan</td>
+                    <td>Pan fresco y delicioso</td>
+                    <td><input type="text" class="form-control" value="$0.00" id="select-price-pan"></td>
+                </tr>
+                <tr>
+                    <td>Galletas</td>
+                    <td>Galletas caseras</td>
+                    <td><input type="text" class="form-control" value="$0.00" id="select-price-galletas"></td>
+                </tr>
+                <tr>
+                    <td>Semillas</td>
+                    <td>Semillas saludables</td>
+                    <td><input type="text" class="form-control" value="$0.00" id="select-price-semillas"></td>
+                </tr>
+                <tr>
+                    <td>Quesos</td>
+                    <td>Quesos artesanales</td>
+                    <td><input type="text" class="form-control" value="$0.00" id="select-price-quesos"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="mailto:giuliano@gmail.com">Gmail</a>
+        </div>
+        <p>&copy; 2024 Almacén de Comida</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function increaseQuantity(id) {
+            var quantityInput = document.getElementById(id);
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decreaseQuantity(id) {
+            var quantityInput = document.getElementById(id);
+            if (parseInt(quantityInput.value) > 0) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+    </script>
+</body>
+</html>
+
+

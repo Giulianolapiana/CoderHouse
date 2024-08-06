@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* es para el desplsamiento suave */
+
+h1{
+    color: orangered;
+    text-align: left;
+    font-size: 55px;
+    padding-left: 5%;
+}
+.barra{
+    float: right;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-right: 5%;
+    /* para que tenga mayusculas */
+    text-transform:capitalize
+}
+.barra ul li{
+    list-style: none;
+    display: inline-block;
+}
+.barra a{
+    text-decoration: none;
+    color: blanchedalmond;
+    padding: 5px;
+}
+/* es para cuando nos posicionemos cambie de color */
+.barra a:hover{
+    color: orangered;
+}
+
+header{
+    background-color: black;
+    height: 110px;
+}
+/* le estamos poniendo de fondo la imagen y centandola */
+main{
+    min-height: 80vh;
+    height: auto;
+    width: 100%;
+    background-color: gray;
+    background-size: cover;
+    padding: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* grid */
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 110px);
+    grid-template-areas: 
+    "img1 img2 img3 img3"
+    "img1 img4 img5 img6"
+    "img7 img4 img8 img8";
+    /* margenes de cada imagen */
+    grid-gap: 15px;
+
+}
+.item{
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    background-size: cover; 
+    background-position: center;
+    filter: blur(80%);
+    /* psra que se vuelva lentamente */
+    transition: all 0.9s;
+}
+/* para posicionarse y que agarre color */
+.item:hover{
+    filter: blur(0%);
+    transform: scale(1.1);
+}
+.item1{
+    background-image: url(/pixabay/inicio1.jpg);
+    grid-area: img1;
+}
+.item2{
+    background-image: url(/pixabay/inicio2.jpg);
+    grid-area: img2;
+}
+.item3{
+    background-image: url(/pixabay/inicio3.jpg);
+    grid-area: img3;
+}
+.item4{
+    background-image: url(/pixabay/portada.jpg);
+    grid-area: img4;
+}
+.item5{
+    background-image: url(/pixabay/portada2.jpg);
+    grid-area: img5;
+}
+.item6{
+    background-image: url(/pixabay/portada3.jpg);
+    grid-area: img6;
+}
+.item7{
+    background-image: url(/pixabay/portada4.jpg);
+    grid-area: img7;
+}
+.item8{
+    background-color: rgb(87, 216, 216);
+    text-align: center;
+    font-size: 90%;
+    grid-area: img8;
+}
+
+/* grid 2 */
+.galeria2{
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    /* margenes de cada imagen */
+    grid-gap: 15px;
+
+}
+.img{
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+.img1{
+    background-image: url(/pixabay/portada4.jpg);
+    background-size: cover; 
+    background-position: center;
+    color: rgb(214, 10, 10);
+}
+
+
+/*  */
+footer{
+    background-color: black;
+    width: 100%;
+    color: blanchedalmond;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform:capitalize 
+}
+.alinearhorizontalmente{
+    /* use el flex ya que no pude ponerlos en linea */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p{
+    letter-spacing: 5px;
+}
+
+.redes a{
+    text-decoration: none;
+    color: orangered;
+    font-size: 25px;
+    letter-spacing: 15px;
+}
+
+
+.subir{
+    background-color: orangered;
+    color: blanchedalmond;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 40px;
+    /* es para redondear el boton */
+    border-radius: 50%;
+    /* box shadow para dar sombra */
+}

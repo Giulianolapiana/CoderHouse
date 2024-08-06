@@ -1,0 +1,12 @@
+h1{
+    color: cadetblue;
+    background-color: beige;
+    text-align: center;
+}
+.navbar{
+    background-color: black ;
+}
+
+.navbar-nav{
+    color: blue !important;
+}

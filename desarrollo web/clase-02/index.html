@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASE 2</title>
+</head>
+<body>
+    <h1>clase 2</h1>
+    <h2>listas</h2>
+    <h3>lista ordenada</h3>
+    <ol>
+        <li>primero</li>
+        <li>segundo</li>
+        <li>tercero</li>
+    </ol>
+    <hr>
+    <ol type = "i">
+        <li>uno</li>
+        <li>dos</li>
+    </ol>
+    <hr>
+    <h3>listas desordenadas</h3>
+    <ul type = "circle">
+        <li>uno</li>
+        <li>dos</li>
+        <li>tres</li>
+    </ul>
+    <hr>
+    <ul> 
+        <li>uno</li>
+        <li>dos</li>
+        <li>tres</li>
+    </ul>
+    <hr>
+    <h2>tablas</h2>
+    <!-- el numero es el grosor del borde, cellspacing, espacio de celda y celpadding espacio interno-->
+    <table border="10" cellspacing="20" cellpadding ="10">
+        <tr>
+            <th>lunes</th>
+            <th>martes</th>
+            <th>miercoles</th>
+        </tr>
+        <tr>
+            <th>si</th>
+            <th>no</th>
+            <th>si</th>
+        </tr>
+    </table>
+    <hr>
+    <h2>multimedia</h2>
+    <h3>imagenes</h3>
+        <img src="multimedia/clock-8592484_1280.jpg" alt="reloj" height="auto" width="50%">
+    <hr>    
+    <h3>audio</h3>
+    <!-- loop es para que el audio se reproduzca una y otra vez, hay varias opciones -->
+        <audio src="multimedia/better-day-186374.mp3" controls muted loop></audio>
+    <h3>video</h3>
+    <!-- siempre usar porcentajes asi se puede ajustar dependiendo el tipo de pantalla -->
+        <video src="multimedia/199558 (720p).mp4" height="auto" width="50%" autoplay controls></video>
+    <h3>iframe</h3>
+        <iframe width="auto" height="50%" src="https://www.youtube.com/embed/VySA0sBDpcE?si=ZVsP3a66EvffBG9g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <hr>
+    <h2>enlaces</h2>
+    <!-- "a" es para enlaces -->
+    <h3>enlaces internos o relativos</h3>
+    <!-- target =-blank para que abra en una nueva pestaña -->
+        <a href="multimedia/clock-8592484_1280.jpg" target="_blank">ir a imagen</a>
+    <!-- para enlasar a una nueva pagina poner ./ para que me muestre todas las opciones -->    
+        <a href="./contacto.html" target="_blank">|ir a contacto</a>
+    <h3>enlaces externos o absolutos</h3>
+        <a href="https://cdn.pixabay.com/photo/2024/02/17/15/02/bird-8579496_960_720.jpg" target="_blank">ir a imagen externa</a>
+    <h3>enlaces ancla</h3>
+    <hr>
+    <h2>formularios</h2>
+    <form action="enviar.php" method="post" enctype="text/plain">
+        <label for="nombre1">nombre</label>
+        <input id="nombre1" type="text" placeholder="escribe tu nombre">
+        <input type="password">
+        <input type="number">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit">
+    </form>
+
+    <!-- <span id = "red-text">verde</span> -->
+</body>
+</html>
